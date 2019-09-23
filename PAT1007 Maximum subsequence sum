@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main(){
+int N,sum,maxsum,a,b,t;
+cin>>N;
+vector<int>v(N);
+sum=maxsum=a=t=0;
+b=N-1;
+for(int i=0;i<N;i++){
+sum=sum+v[i];
+if(sum<0){
+sum=0;
+t=i+1;}
+else if(sum>maxsum){
+maxsum=sum;
+a=t;
+b=i;
+}
+}
+if(maxsum<0) maxsum=0;
+printf("%d %d %d",maxsum,v[a],v[b]);
+return 0;
+}
